@@ -40,6 +40,7 @@ int main(int argc, char * argv[]) {
         arr[i] = (i + rotation) % SIZE + 1;
     }
 
+    srand(time(0));
     int target = rand() % SIZE + 1;
 
     // time the naive approach
