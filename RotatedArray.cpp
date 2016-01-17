@@ -68,6 +68,12 @@ int main(int argc, char * argv[]) {
     if (loc_naive != loc_DQ) {
         std::cout << "ERROR, indicies returned by naive and DQ do not match." << std::endl;
     }
+    if (target != arr[loc_naive]) {
+        std::cout << "ERROR, index found by naive does not match target." << std::endl;
+    }
+    if (target != arr[loc_DQ]) {
+        std::cout << "ERROR, index found by DQ does not match target." << std::endl;
+    }
 
     delete arr;
     return 0;
