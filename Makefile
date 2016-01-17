@@ -24,14 +24,14 @@ TestTopOrder.o: testsrc/TestTopOrder.cpp $(HEADERS)
 TestDFS: TestDFS.o DFS.o
 	$(CC) $(FLAGS) -g -o TestDFS.out TestDFS.o DFS.o
 
-TestSCC: TestSCC.o SCC.o
-	$(CC) $(FLAGS) -g -o TestSCC.out TestSCC.o SCC.o
+TestSCC: TestSCC.o SCC.o DFS.o
+	$(CC) $(FLAGS) -g -o TestSCC.out TestSCC.o SCC.o DFS.o
 
-TestWorm: TestWorm.o Worm.o
-	$(CC) $(FLAGS) -g -o TestWorm.out TestWorm.o Worm.o
+TestWorm: TestWorm.o Worm.o DFS.o
+	$(CC) $(FLAGS) -g -o TestWorm.out TestWorm.o Worm.o DFS.o
 
-TestTopOrder: TestTopOrder.o TopOrder.o
-	$(CC) $(FLAGS) -g -o TestTopOrder.out TestTopOrder.o TopOrder.o
+TestTopOrder: TestTopOrder.o TopOrder.o DFS.o
+	$(CC) $(FLAGS) -g -o TestTopOrder.out TestTopOrder.o TopOrder.o DFS.o
 
 TestAll: TestDFS TestTopOrder TestSCC TestWorm
 
